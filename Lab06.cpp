@@ -22,21 +22,17 @@ int main() {
 	Vector2u sz = backgroundImage.getSize();
 	for (int y = 0; y < sz.y; y++) {
 		for (int x = 0; x < sz.x; x++) {
-			int width = imagePtr->getSize().x;
-			int height = imagePtr->getSize().y;
-			for (int y = 0; y < height; y++) {
-				for (int x = 0; x < width; x++) {
-					int byteOffset = (y * width * 4) + (x * 4);
-					const Color pColor = imagePtr->getPixel(x, y);
-					// do something with the pixel
-				}
-			}
-
-			the background image
+			// These two loops will run the code inside for each pixel in
+			//the background image
 				// You can access the current pixel at x,y like so:
+				Color back = backgroundImage.getPixel(x, y);
 				Color example = foregroundImage.getPixel(x, y);
+				if (foregroundImage.getPixel(x,y) == Color(32, 214, 23)) {
+					foregroundImage.setPixel(x, y, back);
+
+				}
 			// Color objects store the individual channel values like
-			example.r example.gand example.b
+			//example.r example.gand example.b
 		}
 	}
 	// By default, just show the foreground image
