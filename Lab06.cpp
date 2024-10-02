@@ -4,7 +4,7 @@ using namespace sf;
 using namespace std;
 int main() {
 	string background = "images1/backgrounds/winter.png";
-	string foreground = "images1/characters/yoda.png";
+	string foreground = "images1/characters/Rey_green_screen.png";
 	Texture backgroundTex;
 	if (!backgroundTex.loadFromFile(background)) {
 		cout << "Couldn't Load Image" << endl;
@@ -26,8 +26,8 @@ int main() {
 			//the background image
 				// You can access the current pixel at x,y like so:
 				Color back = backgroundImage.getPixel(x, y);
-				Color example = foregroundImage.getPixel(x, y);
-				if (foregroundImage.getPixel(x,y) == Color(32, 214, 23)) {
+				Color example = foregroundImage.getPixel(1023, 767);
+				if (foregroundImage.getPixel(x,y) == Color(example)) {
 					foregroundImage.setPixel(x, y, back);
 
 				}
